@@ -1,3 +1,4 @@
+
 # GPT Resume for Chrome
 
 ![Icono](./cover.jpg)
@@ -15,20 +16,25 @@ GPT Resume for Chrome es una extensión de Chrome que permite reanudar automáti
 1. Clona este repositorio o descarga el código fuente.
    ```sh
    git clone https://github.com/tu-usuario/gpt-resume-for-chrome.git
-Abre Chrome y navega a chrome://extensions/.
+   ```
 
-Activa el "Modo de desarrollador" en la esquina superior derecha.
+2. Abre Chrome y navega a `chrome://extensions/`.
 
-Haz clic en "Cargar descomprimida" y selecciona la carpeta donde descargaste el repositorio.
+3. Activa el "Modo de desarrollador" en la esquina superior derecha.
 
-Uso
-Haz clic en el ícono de la extensión en la barra de herramientas de Chrome.
-Haz clic en el botón "Toggle Auto Click" para activar o desactivar el autoclick.
-La extensión comenzará a hacer clic automáticamente en el botón de reanudar de GPT-4 si está presente.
-Archivos Principales
-manifest.json
-json
-Copiar código
+4. Haz clic en "Cargar descomprimida" y selecciona la carpeta donde descargaste el repositorio.
+
+## Uso
+
+1. Haz clic en el ícono de la extensión en la barra de herramientas de Chrome.
+2. Haz clic en el botón "Toggle Auto Click" para activar o desactivar el autoclick.
+3. La extensión comenzará a hacer clic automáticamente en el botón de reanudar de GPT-4 si está presente.
+
+## Archivos Principales
+
+### `manifest.json`
+
+```json
 {
   "manifest_version": 3,
   "name": "GPT Resume for Chrome",
@@ -53,9 +59,11 @@ Copiar código
     "128": "icon.png"
   }
 }
-background.js
-javascript
-Copiar código
+```
+
+### `background.js`
+
+```javascript
 let isActive = false;
 let currentTabId = null;
 
@@ -87,9 +95,11 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     });
   }
 });
-content.js
-javascript
-Copiar código
+```
+
+### `content.js`
+
+```javascript
 let autoClickInterval;
 let isActive = false;
 
@@ -130,9 +140,11 @@ function clickButtonWithSvg() {
     console.log('SVG with class -rotate-180 not found');
   }
 }
-popup.js
-javascript
-Copiar código
+```
+
+### `popup.js`
+
+```javascript
 document.addEventListener('DOMContentLoaded', () => {
   chrome.runtime.sendMessage({action: "checkStatus"}, (response) => {
     if (response.status === "activated") {
@@ -152,9 +164,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-popup.html
-html
-Copiar código
+```
+
+### `popup.html`
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,9 +184,11 @@ Copiar código
   <script src="popup.js"></script>
 </body>
 </html>
-styles.css
-css
-Copiar código
+```
+
+### `styles.css`
+
+```css
 body {
   font-family: Arial, sans-serif;
   padding: 20px;
@@ -194,37 +210,16 @@ button {
 button:hover {
   background-color: #0056b3;
 }
-Contribuciones
+```
+
+## Contribuciones
+
 Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para cualquier mejora o corrección.
 
-Créditos
+## Créditos
+
 Este proyecto fue desarrollado con la ayuda de ChatGPT, un modelo de lenguaje de OpenAI.
 
-Licencia
-Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo LICENSE.
+## Licencia
 
-vbnet
-Copiar código
-
-#### LICENSE
-
-```text
-MIT License
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Este proyecto está licenciado bajo la Licencia MIT. Para más detalles, consulta el archivo [LICENSE](./LICENSE).
