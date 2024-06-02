@@ -3,7 +3,9 @@
 
 ![Icono](./cover.jpg)
 
-GPT Resume for Chrome es una extensión de Chrome que permite reanudar automáticamente la generación de texto en GPT-4, haciendo clic automáticamente en el botón de reanudar.
+GPT Resume for Chrome es una extensión de Chrome que permite reanudar automáticamente la generación de texto en GPT-4, haciendo clic automáticamente en el botón de reanudar. 
+
+Esta herramienta está fabricada utilizando GPT-4o en pocos minutos. Por lo tanto no tiene buen desarrollo visual, el objetivo ha sido agilizar procesos y reducir tiempos de espera y distracciones innecesarias en mis procesos de desarrollo y procesamiento de código y data.
 
 ## Características
 
@@ -15,7 +17,7 @@ GPT Resume for Chrome es una extensión de Chrome que permite reanudar automáti
 
 1. Clona este repositorio o descarga el código fuente.
    ```sh
-   git clone https://github.com/tu-usuario/gpt-resume-for-chrome.git
+   git clone https://github.com/patoyoulton/gpt-resume-for-chrome.git
    ```
    O descarga el archivo `.zip` de la extensión desde [este enlace](./GPT%20-%20Resume%20for%20Chrome.zip).
    
