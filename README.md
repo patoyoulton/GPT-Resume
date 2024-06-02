@@ -17,7 +17,8 @@ GPT Resume for Chrome es una extensión de Chrome que permite reanudar automáti
    ```sh
    git clone https://github.com/tu-usuario/gpt-resume-for-chrome.git
    ```
-
+   O descarga el archivo `.zip` de la extensión desde [este enlace](./GPT%20-%20Resume%20for%20Chrome.zip).
+   
 2. Abre Chrome y navega a `chrome://extensions/`.
 
 3. Activa el "Modo de desarrollador" en la esquina superior derecha.
